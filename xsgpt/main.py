@@ -7,5 +7,5 @@ def main():
 
     while (i := input('You: ').strip()) != 'exit':
         print(f'AI: {(r:=c((m:=[*m,h("user",i)]))["choices"][0]["message"]["content"])}')
-        m = [*m, h("assistant", r)][:10] # Truncate to 10 messages
+        m = [*m, h("assistant", r)][-10:] # Truncate to 10 last messages
         pickle.dump(m, open(Path(os.getenv('APPDATA', os.path.expanduser('~')),'ai_chat.pkl'), 'wb'))

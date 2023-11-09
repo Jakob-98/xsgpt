@@ -11,6 +11,7 @@ setup(
     entry_points={
         'console_scripts': [
             'xsgpt=xsgpt:xsgpt',
+            'xsgpt-wiki=xsgpt:xsgpt_wiki'
         ],
     },
 )
